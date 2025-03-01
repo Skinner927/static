@@ -11,7 +11,7 @@ echo '<!DOCTYPE html>
 ' > index.html
 
 while IFS= read -d '' -r f ; do
-  printf '<a href="%s">%s</a>\n' "$f" "$f" >> index.html
+  printf '<a href="%s">%s</a><br/>\n' "$f" "$f" >> index.html
 done < <(find ./*/ -type f ! -path './.git/*' -print0)
 
 
